@@ -140,9 +140,10 @@ class BaseMethodIntrospector(object):
             if key not in self.parent.methods():
                 missing_set.add(key)
         if missing_set:
-            raise Exception(
-                "methods %s in class docstring are not in view methods %s"
-                % (list(missing_set), list(self.parent.methods())))
+	  pass
+            #raise Exception(
+                #"methods %s in class docstring are not in view methods %s"
+                #% (list(missing_set), list(self.parent.methods())))
 
     def get_yaml_parser(self):
         parser = YAMLDocstringParser(self)
@@ -347,7 +348,7 @@ class BaseMethodIntrospector(object):
                 f['maximum'] = max_val
 
             # ENUM options
-            if field.type_label in ['multiple choice', 'choice'] \
+            if field.type_label == 'multiple choice' \
                     and isinstance(field.choices, list):
                 f['enum'] = [k for k, v in field.choices]
 
