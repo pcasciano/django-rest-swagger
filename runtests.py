@@ -24,4 +24,4 @@ else:
 
     sys.path.append("./tests/auth_example")
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "auth_example.settings")
-    execute_from_command_line([sys.argv[0], "test"])
+    execute_from_command_line([sys.argv[0], "test"]) 
